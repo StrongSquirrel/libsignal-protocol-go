@@ -1,11 +1,11 @@
 package tests
 
 import (
-	groupRecord "github.com/RadicalApp/libsignal-protocol-go/groups/state/record"
-	"github.com/RadicalApp/libsignal-protocol-go/keys/identity"
-	"github.com/RadicalApp/libsignal-protocol-go/protocol"
-	"github.com/RadicalApp/libsignal-protocol-go/serialize"
-	"github.com/RadicalApp/libsignal-protocol-go/state/record"
+	groupRecord "github.com/StrongSquirrel/libsignal-protocol-go/groups/state/record"
+	"github.com/StrongSquirrel/libsignal-protocol-go/keys/identity"
+	"github.com/StrongSquirrel/libsignal-protocol-go/protocol"
+	"github.com/StrongSquirrel/libsignal-protocol-go/serialize"
+	"github.com/StrongSquirrel/libsignal-protocol-go/state/record"
 )
 
 // Define some in-memory stores for testing.
@@ -93,11 +93,11 @@ func (i *InMemorySession) LoadSession(address *protocol.SignalAddress) *record.S
 	return sessionRecord
 }
 
-func (i *InMemorySession) GetSubDeviceSessions(name string) []uint32 {
-	var deviceIDs []uint32
+func (i *InMemorySession) GetSubDeviceSessions(name string) []string {
+	var deviceIDs []string
 
 	for key := range i.sessions {
-		if key.Name() == name && key.DeviceID() != 1 {
+		if key.Name() == name && key.DeviceID() != "" {
 			deviceIDs = append(deviceIDs, key.DeviceID())
 		}
 	}

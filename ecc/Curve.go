@@ -3,10 +3,11 @@ package ecc
 import (
 	"crypto/rand"
 	"errors"
-	"github.com/RadicalApp/complete"
-	"github.com/RadicalApp/libsignal-protocol-go/logger"
-	"golang.org/x/crypto/curve25519"
 	"io"
+
+	"github.com/RadicalApp/complete"
+	"github.com/StrongSquirrel/libsignal-protocol-go/logger"
+	"golang.org/x/crypto/curve25519"
 )
 
 // DjbType is the Diffie-Hellman curve type (curve25519) created by D. J. Bernstein.

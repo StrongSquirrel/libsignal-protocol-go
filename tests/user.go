@@ -1,19 +1,19 @@
 package tests
 
 import (
-	"github.com/RadicalApp/libsignal-protocol-go/groups"
-	"github.com/RadicalApp/libsignal-protocol-go/keys/identity"
-	"github.com/RadicalApp/libsignal-protocol-go/protocol"
-	"github.com/RadicalApp/libsignal-protocol-go/serialize"
-	"github.com/RadicalApp/libsignal-protocol-go/session"
-	"github.com/RadicalApp/libsignal-protocol-go/state/record"
-	"github.com/RadicalApp/libsignal-protocol-go/util/keyhelper"
+	"github.com/StrongSquirrel/libsignal-protocol-go/groups"
+	"github.com/StrongSquirrel/libsignal-protocol-go/keys/identity"
+	"github.com/StrongSquirrel/libsignal-protocol-go/protocol"
+	"github.com/StrongSquirrel/libsignal-protocol-go/serialize"
+	"github.com/StrongSquirrel/libsignal-protocol-go/session"
+	"github.com/StrongSquirrel/libsignal-protocol-go/state/record"
+	"github.com/StrongSquirrel/libsignal-protocol-go/util/keyhelper"
 )
 
 // user is a structure for a signal user.
 type user struct {
 	name     string
-	deviceID uint32
+	deviceID string
 	address  *protocol.SignalAddress
 
 	identityKeyPair *identity.KeyPair
@@ -50,7 +50,7 @@ func (u *user) buildGroupSession(serializer *serialize.Serializer) {
 }
 
 // newUser creates a new signal user for session testing.
-func newUser(name string, deviceID uint32, serializer *serialize.Serializer) *user {
+func newUser(name, deviceID string, serializer *serialize.Serializer) *user {
 	signalUser := &user{}
 
 	// Generate an identity keypair

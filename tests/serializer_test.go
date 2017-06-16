@@ -2,12 +2,13 @@ package tests
 
 import (
 	"fmt"
-	"github.com/RadicalApp/libsignal-protocol-go/keys/prekey"
-	"github.com/RadicalApp/libsignal-protocol-go/logger"
-	"github.com/RadicalApp/libsignal-protocol-go/session"
-	"github.com/RadicalApp/libsignal-protocol-go/state/record"
-	"github.com/kr/pretty"
 	"testing"
+
+	"github.com/StrongSquirrel/libsignal-protocol-go/keys/prekey"
+	"github.com/StrongSquirrel/libsignal-protocol-go/logger"
+	"github.com/StrongSquirrel/libsignal-protocol-go/session"
+	"github.com/StrongSquirrel/libsignal-protocol-go/state/record"
+	"github.com/kr/pretty"
 )
 
 // TestSerializing tests serialization and deserialization of Signal objects.
@@ -17,8 +18,8 @@ func TestSerializing(t *testing.T) {
 	serializer := newSerializer()
 
 	// Create our users who will talk to each other.
-	alice := newUser("Alice", 1, serializer)
-	bob := newUser("Bob", 2, serializer)
+	alice := newUser("Alice", "1", serializer)
+	bob := newUser("Bob", "2", serializer)
 
 	// Create a session builder to create a session between Alice -> Bob.
 	alice.buildSession(bob.address, serializer)

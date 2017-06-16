@@ -2,8 +2,8 @@ package protocol
 
 import (
 	"errors"
-	"github.com/RadicalApp/libsignal-protocol-go/ecc"
-	"github.com/RadicalApp/libsignal-protocol-go/util/bytehelper"
+	"github.com/StrongSquirrel/libsignal-protocol-go/ecc"
+	"github.com/StrongSquirrel/libsignal-protocol-go/util/bytehelper"
 	"strconv"
 )
 

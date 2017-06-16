@@ -1,8 +1,8 @@
 package ratchet
 
 import (
-	"github.com/RadicalApp/libsignal-protocol-go/kdf"
-	"github.com/RadicalApp/libsignal-protocol-go/util/bytehelper"
+	"github.com/StrongSquirrel/libsignal-protocol-go/kdf"
+	"github.com/StrongSquirrel/libsignal-protocol-go/util/bytehelper"
 )
 
 // KdfInfo is optional bytes to include in deriving secrets with KDF.

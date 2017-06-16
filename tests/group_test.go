@@ -1,13 +1,14 @@
 package tests
 
 import (
-	"github.com/RadicalApp/libsignal-protocol-go/groups"
-	"github.com/RadicalApp/libsignal-protocol-go/keys/prekey"
-	"github.com/RadicalApp/libsignal-protocol-go/logger"
-	"github.com/RadicalApp/libsignal-protocol-go/protocol"
-	"github.com/RadicalApp/libsignal-protocol-go/serialize"
-	"github.com/RadicalApp/libsignal-protocol-go/session"
 	"testing"
+
+	"github.com/StrongSquirrel/libsignal-protocol-go/groups"
+	"github.com/StrongSquirrel/libsignal-protocol-go/keys/prekey"
+	"github.com/StrongSquirrel/libsignal-protocol-go/logger"
+	"github.com/StrongSquirrel/libsignal-protocol-go/protocol"
+	"github.com/StrongSquirrel/libsignal-protocol-go/serialize"
+	"github.com/StrongSquirrel/libsignal-protocol-go/session"
 )
 
 // TestGroupSessionBuilder checks building of a group session.
@@ -17,8 +18,8 @@ func TestGroupSessionBuilder(t *testing.T) {
 	serializer := newSerializer()
 
 	// Create our users who will talk to each other.
-	alice := newUser("Alice", 1, serializer)
-	bob := newUser("Bob", 2, serializer)
+	alice := newUser("Alice", "1", serializer)
+	bob := newUser("Bob", "2", serializer)
 	groupName := "123"
 
 	// ***** Build one-to-one session with group members *****

@@ -1,12 +1,13 @@
 package tests
 
 import (
-	"github.com/RadicalApp/libsignal-protocol-go/keys/prekey"
-	"github.com/RadicalApp/libsignal-protocol-go/logger"
-	"github.com/RadicalApp/libsignal-protocol-go/protocol"
-	"github.com/RadicalApp/libsignal-protocol-go/serialize"
-	"github.com/RadicalApp/libsignal-protocol-go/session"
 	"testing"
+
+	"github.com/StrongSquirrel/libsignal-protocol-go/keys/prekey"
+	"github.com/StrongSquirrel/libsignal-protocol-go/logger"
+	"github.com/StrongSquirrel/libsignal-protocol-go/protocol"
+	"github.com/StrongSquirrel/libsignal-protocol-go/serialize"
+	"github.com/StrongSquirrel/libsignal-protocol-go/session"
 )
 
 // TestSessionBuilder checks building of a session.
@@ -16,8 +17,8 @@ func TestSessionBuilder(t *testing.T) {
 	serializer := newSerializer()
 
 	// Create our users who will talk to each other.
-	alice := newUser("Alice", 1, serializer)
-	bob := newUser("Bob", 2, serializer)
+	alice := newUser("Alice", "1", serializer)
+	bob := newUser("Bob", "2", serializer)
 
 	// Create a session builder to create a session between Alice -> Bob.
 	alice.buildSession(bob.address, serializer)
@@ -124,8 +125,8 @@ func TestSessionRoundtrip(t *testing.T) {
 	serializer := newSerializer()
 
 	// Create our users who will talk to each other.
-	alice := newUser("Alice", 1, serializer)
-	bob := newUser("Bob", 2, serializer)
+	alice := newUser("Alice", "1", serializer)
+	bob := newUser("Bob", "2", serializer)
 
 	// Create a session builder to create a session between Alice -> Bob.
 	alice.buildSession(bob.address, serializer)
@@ -204,8 +205,8 @@ func TestSessionOutOfOrder(t *testing.T) {
 	serializer := newSerializer()
 
 	// Create our users who will talk to each other.
-	alice := newUser("Alice", 1, serializer)
-	bob := newUser("Bob", 2, serializer)
+	alice := newUser("Alice", "1", serializer)
+	bob := newUser("Bob", "2", serializer)
 
 	// Create a session builder to create a session between Alice -> Bob.
 	alice.buildSession(bob.address, serializer)

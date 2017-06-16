@@ -3,14 +3,14 @@
 package prekey
 
 import (
-	"github.com/RadicalApp/libsignal-protocol-go/ecc"
-	"github.com/RadicalApp/libsignal-protocol-go/keys/identity"
-	"github.com/RadicalApp/libsignal-protocol-go/util/optional"
+	"github.com/StrongSquirrel/libsignal-protocol-go/ecc"
+	"github.com/StrongSquirrel/libsignal-protocol-go/keys/identity"
+	"github.com/StrongSquirrel/libsignal-protocol-go/util/optional"
 )
 
 // NewBundle returns a Bundle structure that contains a remote PreKey
 // and collection of associated items.
-func NewBundle(registrationID, deviceID uint32, preKeyID *optional.Uint32, signedPreKeyID uint32,
+func NewBundle(registrationID uint32, deviceID string, preKeyID *optional.Uint32, signedPreKeyID uint32,
 	preKeyPublic, signedPreKeyPublic ecc.ECPublicKeyable, signedPreKeySig [64]byte,
 	identityKey *identity.Key) *Bundle {
 
@@ -32,7 +32,7 @@ func NewBundle(registrationID, deviceID uint32, preKeyID *optional.Uint32, signe
 // of associated items.
 type Bundle struct {
 	registrationID        uint32
-	deviceID              uint32
+	deviceID              string
 	preKeyID              *optional.Uint32
 	preKeyPublic          ecc.ECPublicKeyable
 	signedPreKeyID        uint32
@@ -42,7 +42,7 @@ type Bundle struct {
 }
 
 // DeviceID returns the device ID this PreKey belongs to.
-func (b *Bundle) DeviceID() uint32 {
+func (b *Bundle) DeviceID() string {
 	return b.deviceID
 }
 
